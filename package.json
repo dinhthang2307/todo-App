@@ -1,0 +1,16 @@
+{
+  "name": "todo-app",
+  "version": "1.0.0",
+  "description": "This is a small nodejs project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "author": "ThangVD <Dinhthang2307@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4"
+  }
+}

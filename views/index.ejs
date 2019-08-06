@@ -1,34 +1,130 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title> Thang ToDo App </title>
-  <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet">
-  <link href="/styles.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        button{
+            color: white;
+            background-color: red;
+            float: right;
+            margin-bottom: 1%;
+            margin-right: 1%;
+            padding: 1%;
+        }
+
+        img {
+            width: 40%;
+            height:100%;
+            padding: 1px;
+        }
+
+        .container{
+            padding: 10%;
+            padding-top: 2%;
+        }
+
+        .header{
+            width: 50%;
+            float: right;
+        }
+
+        .column {
+            float: left;
+            border-color: red;
+            width: 45%;
+            height: 60%;
+            border-width: 1px;
+            border-style: solid;
+        }
+
+        .row:after {
+            content:"";
+            display: table;
+            clear: both;
+        }
+
+        .slogan{
+            margin-left: 20%;
+            display: inline-block; 
+            background-color: #dadada;
+            border-left: 5px orangered solid;
+        }
+
+        .footer{
+            text-align: center;
+        }
+
+        #second{
+            margin-left:10%;
+            height:100%;
+        }
+
+        @media screen and (max-width: 1000px) {
+            .column {
+                width: 70%;
+            }
+            #second{
+                margin-left:0%;
+                margin-top: 2%;
+            }
+        }
+    </style>
 </head>
-
 <body>
-  <div class="container">
-    <h2> A Simple ToDo List App </h2>
-    <form action="/addtask" method="POST">
-      <input type="text" name="newtask" placeholder="add new task">
-      <button> Add Task </button>
-      <h2> Added Task </h2>
-      <% for( var i = 0; i < task.length; i++){ %>
-        <li>
-          <input type="checkbox" name="check" value="<%= task[i] %>" />
-          <%= task[i] %>
-        </li>
-        <% } %>
-          <button formaction="/removetask" type="submit"> Remove </button>
-    </form>
-    <h2> Completed task </h2>
-    <% for(var j = 0; j < complete.length; j++){ %>
-      <li>
-        <input type="checkbox" checked>
-        <%= complete[j] %>
-      </li>
-      <% } %>
-  </div>
-</body>
+    <div style="display: table;clear: both;width: 100%; margin-left: 10%;">
+        <div style="width: 50%; float: left;">
+            <img src = "/images/image3.PNG" alt="">
+        </div>
+        <div class="header">
+            <hr style = "caret-color: orange; height: 2px;background-color: orange;border: none;">
+            <div class = "slogan">
+                <b>Your shopping cart</b></br>
+                Your shopping cart is empty.
+            </div>
+        </div>
+    </div>
+    <div class="container">
 
+    <hr style = "caret-color: orange; height: 2px;background-color: orange;border: none;">
+    On sale today</br>
+    <hr style = "caret-color: orange; height: 1px;background-color: orange;border: none;">
+    <div style = "background-color: orange; padding:0.5%;margin: 0.5%; margin-left: 0px;margin-right: 0px;">TicketShop proposes the following events in exclusivity: </div>
+    <div class="row">
+        <div class="column">
+            <div style= "color:white; background-color: red;">Stomp</div>
+            <div class="content">
+                <img src="/images/image1.PNG">
+                <p style="float: right; width: 60%; height:80%; ;padding: 3%;">Event STOMP
+                    from 01/02/2007 to 12/02/2007
+                    from 0.00 CHF to 23.00 CHF
+                </p>
+                <button>>>Book</button>
+            </div>
+        </div>
+
+        <div class="column" id="second">
+            <div style= "color:white; background-color: red;">Paleo</div>
+            <img src="/images/image2.PNG">
+            <p style="float: right; width: 60%; height:80%;padding: 3%;">
+                from 01/02/2007 to 12/02/2007
+                from 5.00 CHF  to 23.00  CHF
+            </p>
+            <button>>>Book</button>
+        </div>
+    </div>
+    </div>
+    <hr style = "caret-color: orange; height: 2px;background-color: orange;border: none;">
+
+    <div class="footer">
+        <div style="text-decoration: underline; color: blue;">General Sales Conditions  -  Privacy Charter  -  Contact us</br></div>
+        © SecuTix 2006 
+    </div>
+</body>
 </html>
